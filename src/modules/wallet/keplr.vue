@@ -100,7 +100,6 @@ function suggest() {
     // @ts-ignore
     if (window.keplr) {
         // @ts-ignore
-        debugger
         window.keplr.experimentalSuggestChain(JSON.parse(conf.value)).catch(e => {
             error.value = e
         })
