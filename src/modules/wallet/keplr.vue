@@ -27,7 +27,7 @@ async function initParamsForKeplr() {
         high: 0.03,
     }
     const coinDecimals = chain.assets[0].denom_units.find(x => x.denom === chain.assets[0].symbol.toLowerCase())?.exponent || 6
-    conf.value = JSON.stringify({
+    const jsonConf = {
         chainId: chainid,
         chainName: chain.chainName,
         rpc: chain.endpoints?.rpc?.at(0)?.address,
@@ -69,13 +69,38 @@ async function initParamsForKeplr() {
             coinGeckoId: chain.assets[0].coingecko_id || 'unknown',
         },
         features: chain.keplrFeatures || [],
-    }, null, '\t')
+    }
+    if(chain.assets && chain.assets.length > 0) {
+        jsonConf.currencies = []
+        for(const asset of chain.assets) {
+            jsonConf.currencies.push({
+                coinDenom: asset.symbol,
+                coinMinimalDenom: asset.base,
+                coinDecimals: asset.denom_units.find(x => x.denom === asset.symbol.toLowerCase())?.exponent || 6,
+                coinGeckoId: asset.coingecko_id || 'unknown',
+            })
+        }
+    }
+    if(chain.feeCurrencies && chain.feeCurrencies.length > 0) {
+        jsonConf.feeCurrencies = []
+        for(const asset of chain.feeCurrencies) {
+            jsonConf.feeCurrencies.push({
+                coinDenom: asset.symbol,
+                coinMinimalDenom: asset.base,
+                coinDecimals: asset.denom_units.find(x => x.denom === asset.symbol.toLowerCase())?.exponent || 6,
+                coinGeckoId: asset.coingecko_id || 'unknown',
+                gasPriceStep,
+            })
+        }
+    }
+    conf.value = JSON.stringify(jsonConf, null, '\t')
 }
 
 function suggest() {
     // @ts-ignore
     if (window.keplr) {
         // @ts-ignore
+        debugger
         window.keplr.experimentalSuggestChain(JSON.parse(conf.value)).catch(e => {
             error.value = e
         })
