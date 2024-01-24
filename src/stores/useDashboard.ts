@@ -102,6 +102,13 @@ export interface LocalConfig {
     logo: string;
     symbol: string;
   }[];
+  feeCurrencies: {
+    base: string;
+    coingecko_id: string;
+    exponent: string;
+    logo: string;
+    symbol: string;
+  }[];
   chain_name: string;
   coin_type: string;
   logo: string;
@@ -150,7 +157,7 @@ export function fromLocal(lc: LocalConfig): ChainConfig {
       { denom: x.symbol.toLowerCase(), exponent: Number(x.exponent) },
     ],
   }));
-  conf.feeCurrencies = lc.assets.map((x) => ({
+  conf.feeCurrencies = lc.feeCurrencies.map((x) => ({
     name: x.base,
     base: x.base,
     display: x.symbol,
