@@ -1,0 +1,59 @@
+{
+  "chain_name": "coss-testnet",
+  "coingecko": "",
+  "api": ["https://coss-testnet-rest.coss.ink"],
+  "rpc": ["https://coss-testnet-rpc.coss.ink"],
+  "snapshot_provider": "",
+  "sdk_version": "0.47.3",
+  "coin_type": "118",
+  "min_tx_fee": "2500",
+  "addr_prefix": "coss",
+  "logo": "https://static.coss.ink/coss-logo.jpg",
+  "theme_color": "#812cd6",
+  "assets": [
+    {
+      "base": "ucgas",
+      "symbol": "CGAS",
+      "exponent": "6",
+      "coingecko_id": "",
+      "logo": "https://static.coss.ink/coss-logo.jpg"
+    },
+    {
+      "base": "ucias",
+      "symbol": "CIAS",
+      "exponent": "6",
+      "coingecko_id": "",
+      "logo": "https://static.coss.ink/coss-logo.jpg"
+    },
+    {
+      "base": "ucoss",
+      "symbol": "COSS",
+      "exponent": "6",
+      "coingecko_id": "",
+      "logo": "https://static.coss.ink/coss-logo.jpg"
+    }
+  ],
+  "feeCurrencies": [
+    {
+      "base": "ucias",
+      "symbol": "CIAS",
+      "exponent": "6",
+      "coingecko_id": "",
+      "logo": "https://static.coss.ink/coss-logo.jpg"
+    },
+    {
+      "base": "ucgas",
+      "symbol": "CGAS",
+      "exponent": "6",
+      "coingecko_id": "",
+      "logo": "https://static.coss.ink/coss-logo.jpg"
+    },
+    {
+      "base": "ucoss",
+      "symbol": "COSS",
+      "exponent": "6",
+      "coingecko_id": "",
+      "logo": "https://static.coss.ink/coss-logo.jpg"
+    }
+  ]
+}
