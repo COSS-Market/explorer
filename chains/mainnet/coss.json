@@ -23,14 +23,14 @@
         "base": "ucias",
         "symbol": "CIAS",
         "exponent": "6",
-        "coingecko_id": "",
+        "coingecko_id": "cias",
         "logo": "https://static.coss.ink/coss-logo.jpg"
       },
       {
         "base": "ucoss",
         "symbol": "COSS",
         "exponent": "6",
-        "coingecko_id": "",
+        "coingecko_id": "coss-2",
         "logo": "https://static.coss.ink/coss-logo.jpg"
       }
     ],
@@ -39,7 +39,7 @@
         "base": "ucias",
         "symbol": "CIAS",
         "exponent": "6",
-        "coingecko_id": "",
+        "coingecko_id": "cias",
         "logo": "https://static.coss.ink/coss-logo.jpg"
       },
       {
@@ -53,7 +53,7 @@
         "base": "ucoss",
         "symbol": "COSS",
         "exponent": "6",
-        "coingecko_id": "",
+        "coingecko_id": "coss-2",
         "logo": "https://static.coss.ink/coss-logo.jpg"
       }
     ]
